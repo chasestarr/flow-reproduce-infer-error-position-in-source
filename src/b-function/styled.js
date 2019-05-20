@@ -1,19 +1,13 @@
 // @flow
-import * as React from "react";
-import {createStyled} from "styletron-react";
-import {driver} from "styletron-standard";
-import type {StyleObject} from "styletron-standard";
 
 type StyleFn = {
-  <Props>(string, (Props) => StyleObject): any,
+  <Props>(string, (Props) => number): any,
 
-  <Base: React.ComponentType<any>, Props>(Base, (Props) => any): any,
+  <Base: number, Props>(Base, (Props) => number): any,
 };
 
-const styled = ((createStyled({
-  wrapper: x => x,
-  getInitialStyle: () => ({}),
-  driver,
-}): any): StyleFn);
+const styled: StyleFn = (base, callback) => {
+  return props => callback(props);
+};
 
 export default styled;

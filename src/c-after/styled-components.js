@@ -5,5 +5,5 @@ import type {StylePropsT} from "./types.js";
 
 export const Comp = styled<StylePropsT>("div", props => {
   console.log(props.foo);
-  return {};
+  return 2;
 });
