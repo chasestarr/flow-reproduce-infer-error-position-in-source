@@ -1,3 +1,3 @@
 // @flow
 
-export type Options = string;
+export type Options = {foo: string};
