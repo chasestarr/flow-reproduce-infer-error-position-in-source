@@ -1,5 +1,3 @@
 // @flow
 
-export type StylePropsT = {
-  foo: 'string',
-};
+export type Options = string;

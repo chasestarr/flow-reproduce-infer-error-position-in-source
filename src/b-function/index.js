@@ -1,13 +1,13 @@
 // @flow
 
-type StyleFn = {
-  <Props>(string, (Props) => number): any,
+type FnT = {
+  <T>(string, (T) => number): any,
 
-  <Base: number, Props>(Base, (Props) => number): any,
+  <N: number, T>(N, (T) => number): any,
 };
 
-const styled: StyleFn = (base, callback) => {
+const fn: FnT = (n, callback) => {
   return props => callback(props);
 };
 
-export default styled;
+export default fn;
