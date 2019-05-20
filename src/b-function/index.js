@@ -1,5 +1,13 @@
 // @flow
 
-import styled from './styled.js';
+type StyleFn = {
+  <Props>(string, (Props) => number): any,
 
-export {styled};
+  <Base: number, Props>(Base, (Props) => number): any,
+};
+
+const styled: StyleFn = (base, callback) => {
+  return props => callback(props);
+};
+
+export default styled;
