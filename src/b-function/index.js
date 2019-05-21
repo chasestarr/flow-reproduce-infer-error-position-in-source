@@ -7,7 +7,7 @@ type FnT = {
 };
 
 const fn: FnT = (n, callback) => {
-  return props => callback(props);
+  return x => callback(x);
 };
 
 export default fn;
